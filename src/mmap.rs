@@ -136,6 +136,11 @@ mod test {
                 assert_eq!(ptr::read(i as *mut u8), i as u8);
             }
             munmap(addr as Ptr, desired);
+            let addr = mmap_to_file_trimmed(desired, file_name).unwrap() as usize;
+            for i in addr..addr + desired {
+                assert_eq!(ptr::read(i as *mut u8), i as u8);
+            }
+            munmap(addr as Ptr, desired);
         }
     }
 }
