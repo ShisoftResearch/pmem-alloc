@@ -1,0 +1,16 @@
+[package]
+name = "pmem-alloc"
+version = "0.1.0"
+authors = ["Hao Shi <shisoftgenius@gmail.com>"]
+description = "Immix style memory allocator for Neb"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "pmem_alloc"
+
+[dependencies]
+libc = "*"
+errno = "*"
+lazy_static = "*"
